@@ -1,0 +1,19 @@
+var _user$project$Another$checkStatus = function (status) {
+	return _elm_lang$core$Native_Utils.eq(status, 200) ? 'success' : (_elm_lang$core$Native_Utils.eq(status, 404) ? 'file not found' : 'unknown error');
+};
+var _user$project$Another$stati = {
+	ctor: '::',
+	_0: _user$project$Another$checkStatus(200),
+	_1: {
+		ctor: '::',
+		_0: _user$project$Another$checkStatus(404),
+		_1: {
+			ctor: '::',
+			_0: _user$project$Another$checkStatus(418),
+			_1: {ctor: '[]'}
+		}
+	}
+};
+var _user$project$Another$main = _elm_lang$virtual_dom$Native_VirtualDom.staticProgram(
+	_elm_lang$html$Html$text(
+		_elm_lang$core$Basics$toString(_user$project$Another$stati)));
