@@ -17,10 +17,16 @@ stati =
     , checkStatus 404
     , checkStatus 418
     ]
+
+renderList: List String -> Html msg
+renderList list =
+    ul [] 
+    (List.map(\ i -> li [] [text i]) list)
     
 
 main: Html msg
 main = 
-    stati
-    |> toString 
-    |> text
+    div [] [
+        h1 [] [text "Maps and Lists"]
+        , renderList stati
+    ]
